@@ -1,31 +1,32 @@
-const express = require('express')
-var bodyParser = require('body-parser');
-var logger = require('morgan');
-const app = express();
+const cors = require("cors")
+const express = require("express")
+const path = require("path")
+const logger = require("morgan")
+const cookieParser = require("cookie-parser")
+const bodyParser = require("body-parser")
 
-//--------------------------------------------------
+const mongoose = require("mongoose")
 
-var routes = require('./routes/questions-answers');
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.DATABASE, {
+  useMongoClient: true
+}) // connect to MongoDB
 
-//--------------------------------------------------
+const index = require("./routes/index")
+const users = require("./routes/users")
+const questions = require("./routes/questions")
 
-app.use(bodyParser.json());
-app.use(logger('dev'));
+const app = express()
 
-//--------------------------------------------------
+app.use(cors())
+app.use(logger("dev"))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(express.static(path.join(__dirname, "public")))
 
-app.use('/questions-answers', routes);
+app.use("/", index)
+app.use("/api/users", users)
+app.use("/api/questions", questions)
 
-//--------------------------------------------------
-
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-})
-
-app.listen(3000, function () {
-  console.log('Server listening on port 3000!');
-})
-
-//--------------------------------------------------
-
-module.exports = app;
+module.exports = app

@@ -28,7 +28,7 @@ class Navbar extends React.Component {
           	</NavItem>
           	<NavItem>
             	<NavLink href="#" className="btn-addquestion navlink">
-            		<Button outline color="danger" onClick={Add.toggleQuestion}>Add Question</Button>
+            		<Button outline color="danger" onClick={AddQuestion.toggleQuestion}>Add Question</Button>
             	</NavLink>
           	</NavItem>
         	</Nav>

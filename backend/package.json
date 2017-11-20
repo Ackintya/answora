@@ -1,27 +1,20 @@
 {
-  "name": "server",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "RESTAPI-Answora",
-  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node index",
+    "dev": "nodemon index"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hafidziapermana/answora.git"
+  "engines": {
+    "node": "9.x.x"
   },
-  "keywords": [],
-  "author": "Hafidz Permana",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hafidziapermana/answora/issues"
-  },
-  "homepage": "https://github.com/hafidziapermana/answora#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
-    "mongoose": "^4.12.6",
+    "mongoose": "^4.13.0",
+    "mongoose-sequence": "^4.0.1",
     "morgan": "^1.9.0"
   },
   "devDependencies": {

@@ -15,6 +15,7 @@ class CenterCol extends React.Component {
     	disabledDownvote: false,
     	DownvoteStatus: 'Downvote',
     	input: '',
+    	answers: [],
     	visibility: false
     }
   	this.toggle = this.toggle.bind(this);
@@ -58,7 +59,7 @@ class CenterCol extends React.Component {
 
   handleSubmit() {
 		this.setState({
-			answer: this.state.input
+			answers: this.state.input
 		});
 		console.log('Your Answer Submited')
 	}

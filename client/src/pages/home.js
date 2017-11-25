@@ -1,22 +1,23 @@
 import React from 'react';
-import CenterColQuestions from '../components/CenterColQuestions';
-import Navbar from '../components/Navbar';
-import LeftCol from '../components/LeftCol';
-import RightCol from '../components/RightCol';
+import CenterColQuestion from '../components/planet/CenterColQuestion';
+import Navbar from '../components/galactic/Navbar';
+import LeftCol from '../components/galactic/LeftCol';
+import RightCol from '../components/galactic/RightCol';
 import { Row, Col } from 'reactstrap';
+import helpers from '../helpers'
 
 class Home extends React.Component {
 	render() {
 		return(
 			<div className="home">
-				<Navbar />
+				<Navbar user={helpers.decodeToken()}/>
 				<Row className="wrapper">
 		         <Col xs="6" sm="3">
 		          	<LeftCol />
 		         </Col>
 
 		         <Col xs="6" sm="6">
-		         	<CenterColQuestions />
+		         	<CenterColQuestion />
 		         </Col>
 		          
 		         <Col sm="3">

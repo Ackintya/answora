@@ -4,7 +4,7 @@ process.env.NODE_ENV !== "development" && require("dotenv").config()
 // NODE, EXPRESS, MIDDLEWARE MODULES
 // -----------------------------------------------------------------------------
 
-// Express Dependencies
+// Dependencies
 const express       = require('express');       // define express
 const bodyParser    = require('body-parser');   // extract the entire body portion of an incoming request stream and exposes it on req.body
 const cookieParser  = require("cookie-parser"); // IDK yet
@@ -57,5 +57,3 @@ app.use("/auth", apiAuth)
 app.listen(8080, function () {
   console.log('Server listening on port 8080!');
 })
-
-module.exports = app;

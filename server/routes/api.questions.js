@@ -1,4 +1,4 @@
-const express = require('express');
+var express = require('express')
 const router = express.Router();
 const Questions = require('../controller/questions.controller')
 const Answers = require('../controller/answers.controller') 
